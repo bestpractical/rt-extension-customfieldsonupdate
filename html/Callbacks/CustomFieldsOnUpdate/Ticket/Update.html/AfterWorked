@@ -1,0 +1,8 @@
+<& /Ticket/Elements/EditCustomFields,
+    TicketObj => $Ticket,
+    InTable => 1,
+    DefaultsFromTopArguments => 0,
+&>
+<%ARGS>
+$Ticket
+</%ARGS>
