@@ -1,5 +1,14 @@
-<& /Ticket/Elements/EditCustomFields,
-    TicketObj => $Ticket,
+<%INIT>
+my $comp = '/Elements/EditCustomFields';
+my %obj_args = ( Object => $Ticket );
+
+if (!$m->comp_exists('/Elements/EditCustomFields')) {
+    $comp = '/Ticket/Elements/EditCustomFields';
+    %obj_args = ( TicketObj => $Ticket );
+}
+</%INIT>
+<& $comp,
+    %obj_args,
     InTable => 1,
     DefaultsFromTopArguments => 0,
 &>
