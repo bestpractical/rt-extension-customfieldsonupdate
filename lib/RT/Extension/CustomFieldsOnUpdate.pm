@@ -15,37 +15,66 @@ RT::Extension::CustomFieldsOnUpdate - edit ticket's custom fields on reply/comme
 This extension adds often requested feature - update of ticket's custom fields on
 reply and comment.
 
-This is for RT 4.0.x, solutions for older versions available on the wiki,
-start from CustomFieldsOnUpdate page [1].
+=head1 RT VERSION
 
-[1] http://requesttracker.wikia.com/wiki/CustomFieldsOnUpdate
+This is for RT 4, solutions for older versions are available on the wiki linked from the CustomFieldsOnUpdate page.
+http://requesttracker.wikia.com/wiki/CustomFieldsOnUpdate
 
-=head1 INSTALLATION
+=head1 INSTALLATION 
 
-It's sad but RT 4.0.0 - 4.0.2 miss a tiny feature, so you have to apply
+=over
+
+=item C<perl Makefile.PL>
+
+=item C<make>
+
+=item C<make install>
+
+May need root permissions
+
+=item Edit your F</opt/rt4/etc/RT_SiteConfig.pm>
+
+If you are using RT 4.2 or greater, add this line:
+
+    Plugin('RT::Extension::CustomFieldsOnUpdate');
+
+For RT 4.0, add this line:
+
+    Set(@Plugins, qw(RT::Extension::CustomFieldsOnUpdate));
+
+or add C<RT::Extension::CustomFieldsOnUpdate> to your existing C<@Plugins> line.
+
+=item Patch your RT
+
+If you are running RT 4.0.0 - 4.0.2 you need to apply
 F<patches/RT-4.0.0-2-edit-ticket-custom-fields-in-table.patch>. This change
-is part of RT 4.0.3.
+is part of RT 4.0.3 and later.
 
-Otherwise installation is common:
+    patch -p1 < /path/to/RT-4.0.0-2-edit-ticket-custom-fields-in-table.patch
 
-    perl Makefile.PL
-    make
-    make install
+=item Clear your mason cache
 
-Register 'RT::Extension::CustomFieldsOnUpdate' in the site config;
+    rm -rf /opt/rt4/var/mason_data/obj
 
-    Set(@Plugins, qw(
-        RT::Extension::CustomFieldsOnUpdate
-        ... other plugins you may have ...
-    ));
+=item Restart your webserver
 
-=cut
+=back
 
 =head1 AUTHOR
 
-Ruslan Zakirov E<lt>ruz@bestpractical.comE<gt>
+Ruslan Zakirov <ruz@bestpractical.com>
+Kevin Falcone <falcone@bestpractical.com>
 
-=head1 LICENSE
+=head1 BUGS
+
+All bugs should be reported via email to
+L<bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org|mailto:bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org>
+or via the web at
+L<rt.cpan.org|http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-CustomFieldsOnUpdate>.
+
+=head1 LICENSE AND COPYRIGHT
+
+This software is Copyright (c) 2014 by Best Practical Solutions
 
 Under the same terms as perl itself.
 
