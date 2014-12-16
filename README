@@ -3,18 +3,13 @@ NAME
     reply/comment
 
 DESCRIPTION
-    This extension adds often requested feature - update of ticket's custom
-    fields on reply and comment.
-
-RT VERSION
-    This is for RT 4, solutions for older versions are available on the wiki
-    linked from the CustomFieldsOnUpdate page.
-    http://requesttracker.wikia.com/wiki/CustomFieldsOnUpdate
+    This extension allows the update of tickets' custom fields on reply and
+    comment pages.
 
 INSTALLATION
-    "perl Makefile.PL"
-    "make"
-    "make install"
+    perl Makefile.PL
+    make
+    make install
         May need root permissions
 
     Edit your /opt/rt4/etc/RT_SiteConfig.pm
@@ -26,15 +21,8 @@ INSTALLATION
 
             Set(@Plugins, qw(RT::Extension::CustomFieldsOnUpdate));
 
-        or add "RT::Extension::CustomFieldsOnUpdate" to your existing
-        @Plugins line.
-
-    Patch your RT
-        If you are running RT 4.0.0 - 4.0.2 you need to apply
-        patches/RT-4.0.0-2-edit-ticket-custom-fields-in-table.patch. This
-        change is part of RT 4.0.3 and later.
-
-            patch -p1 < /path/to/RT-4.0.0-2-edit-ticket-custom-fields-in-table.patch
+        or add RT::Extension::CustomFieldsOnUpdate to your existing @Plugins
+        line.
 
     Clear your mason cache
             rm -rf /opt/rt4/var/mason_data/obj
@@ -42,19 +30,21 @@ INSTALLATION
     Restart your webserver
 
 AUTHOR
-    Ruslan Zakirov <ruz@bestpractical.com> Kevin Falcone
-    <falcone@bestpractical.com>
+    Best Practical Solutions, LLC <modules@bestpractical.com>
 
 BUGS
     All bugs should be reported via email to
-    bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org
-    <mailto:bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org> or via the
-    web at rt.cpan.org
-    <http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-CustomFie
-    ldsOnUpdate>.
+
+        L<bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org|mailto:bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org>
+
+    or via the web at
+
+        L<rt.cpan.org|http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-CustomFieldsOnUpdate>.
 
 LICENSE AND COPYRIGHT
     This software is Copyright (c) 2014 by Best Practical Solutions
 
-    Under the same terms as perl itself.
+    This is free software, licensed under:
+
+      The GNU General Public License, Version 2, June 1991
 

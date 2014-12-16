@@ -4,7 +4,7 @@ use warnings;
 
 package RT::Extension::CustomFieldsOnUpdate;
 
-our $VERSION = '0.02';
+our $VERSION = '1.00';
 
 =head1 NAME
 
@@ -12,15 +12,10 @@ RT::Extension::CustomFieldsOnUpdate - edit ticket's custom fields on reply/comme
 
 =head1 DESCRIPTION
 
-This extension adds often requested feature - update of ticket's custom fields on
-reply and comment.
+This extension allows the update of tickets' custom fields on reply and
+comment pages.
 
-=head1 RT VERSION
-
-This is for RT 4, solutions for older versions are available on the wiki linked from the CustomFieldsOnUpdate page.
-http://requesttracker.wikia.com/wiki/CustomFieldsOnUpdate
-
-=head1 INSTALLATION 
+=head1 INSTALLATION
 
 =over
 
@@ -54,21 +49,25 @@ or add C<RT::Extension::CustomFieldsOnUpdate> to your existing C<@Plugins> line.
 
 =head1 AUTHOR
 
-Ruslan Zakirov <ruz@bestpractical.com>
-Kevin Falcone <falcone@bestpractical.com>
+Best Practical Solutions, LLC E<lt>modules@bestpractical.comE<gt>
 
 =head1 BUGS
 
 All bugs should be reported via email to
-L<bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org|mailto:bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org>
+
+    L<bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org|mailto:bug-RT-Extension-CustomFieldsOnUpdate@rt.cpan.org>
+
 or via the web at
-L<rt.cpan.org|http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-CustomFieldsOnUpdate>.
+
+    L<rt.cpan.org|http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-CustomFieldsOnUpdate>.
 
 =head1 LICENSE AND COPYRIGHT
 
 This software is Copyright (c) 2014 by Best Practical Solutions
 
-Under the same terms as perl itself.
+This is free software, licensed under:
+
+  The GNU General Public License, Version 2, June 1991
 
 =cut
 
