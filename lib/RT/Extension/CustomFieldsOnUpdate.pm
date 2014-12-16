@@ -44,14 +44,6 @@ For RT 4.0, add this line:
 
 or add C<RT::Extension::CustomFieldsOnUpdate> to your existing C<@Plugins> line.
 
-=item Patch your RT
-
-If you are running RT 4.0.0 - 4.0.2 you need to apply
-F<patches/RT-4.0.0-2-edit-ticket-custom-fields-in-table.patch>. This change
-is part of RT 4.0.3 and later.
-
-    patch -p1 < /path/to/RT-4.0.0-2-edit-ticket-custom-fields-in-table.patch
-
 =item Clear your mason cache
 
     rm -rf /opt/rt4/var/mason_data/obj
