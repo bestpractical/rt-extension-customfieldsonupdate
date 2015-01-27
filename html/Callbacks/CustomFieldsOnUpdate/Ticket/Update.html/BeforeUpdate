@@ -12,6 +12,7 @@ my $ValidCFs = $m->comp(
     '/Elements/ValidateCustomFields',
     CustomFields => $CFs,
     NamePrefix => "Object-RT::Ticket-". $TicketObj->id ."-CustomField-",
+    Object => $TicketObj,
     ARGSRef => $ARGSRef
 );
 unless ( $ValidCFs ) { 
