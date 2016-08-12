@@ -4,7 +4,7 @@ use warnings;
 
 package RT::Extension::CustomFieldsOnUpdate;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 =head1 NAME
 
@@ -63,7 +63,7 @@ or via the web at
 
 =head1 LICENSE AND COPYRIGHT
 
-This software is Copyright (c) 2014 by Best Practical Solutions
+This software is Copyright (c) 2016 by Best Practical Solutions
 
 This is free software, licensed under:
 
