@@ -2,6 +2,21 @@
 my $comp = '/Elements/EditCustomFields';
 my %obj_args = ( Object => $Ticket );
 
+my %cfg = RT->Config->Get('CustomFieldsOnUpdate');
+if (exists $cfg{$Ticket->QueueObj->Name}) {
+    my $FieldList = $cfg{$Ticket->QueueObj->Name} or return;
+
+    my $fields = $Ticket->CustomFields;
+    $fields->Limit(
+            FIELD         => 'Name',
+            FUNCTION      => 'LOWER(?)',
+            OPERATOR      => 'IN',
+            VALUE         => [map {lc $_} @{$FieldList}],
+            CASESENSITIVE => 1,
+    );
+    %obj_args = ( Object => $Ticket, CustomFields => $fields );
+}
+
 if (!$m->comp_exists('/Elements/EditCustomFields')) {
     $comp = '/Ticket/Elements/EditCustomFields';
     %obj_args = ( TicketObj => $Ticket );
