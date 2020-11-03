@@ -47,6 +47,17 @@ or add C<RT::Extension::CustomFieldsOnUpdate> to your existing C<@Plugins> line.
 
 =back
 
+=head1 CONFIGURATION
+To define which fields should be displayed on specific queues use the
+C<%CustomFieldsOnUpdate> config option.  This option takes the form of:
+
+    Set( %CustomFieldsOnUpdate, (
+        'QueueName 1' => [ 'Custom field name 1', 'Custom field name 2', ],
+        'QueueName 2' => undef,
+    ));
+
+The fallback for queues without specific rules specified is that all custom fields are displayed.
+
 =head1 AUTHOR
 
 Best Practical Solutions, LLC E<lt>modules@bestpractical.comE<gt>
